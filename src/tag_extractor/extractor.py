@@ -1,5 +1,5 @@
 from src.tag_extractor.fast_model import models
-from src.tag_extractor.utils import clean_text, merge_and_dedup, combine_title_body 
+from src.tag_extractor.utils import clean_text, merge_and_dedup, combine_title_body
 from typing import List
 from src.tag_extractor.utils import expand_with_synonyms
 
@@ -38,5 +38,5 @@ def predict_tags(title: str, body: str) -> List[str]:
     # Expand semantically
     enriched_tags = expand_with_synonyms(base_tags)
 
-    return clean_tags(enriched_tags)
+    return enriched_tags
 

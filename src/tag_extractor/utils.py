@@ -6,10 +6,12 @@ nltk.download('wordnet')
 nltk.download('omw-1.4')
 
 CUSTOM_STOPWORDS = {
-    "used", "using", "use", "based", "done", "this", "that", "these", "those",
+    "used", "using", "use", "based", "done", "doing", "this", "that", "these", "those",
     "thing", "things", "etc", "get", "got", "give", "given", "taken", "take",
-    "make", "made", "do", "did", "doing", "done", "good", "great", "bad", "well"
+    "make", "made", "do", "did", "good", "great", "bad", "well", "help", "nice",
+    "create", "created", "creating", "support", "work", "working"
 }
+
 
 def clean_text(text: str) -> str:
     text = text.strip().lower()
@@ -63,4 +65,3 @@ def expand_with_synonyms(tags: List[str], limit=2) -> List[str]:
                         expanded.add(synonym)
 
     return list(expanded)
-
